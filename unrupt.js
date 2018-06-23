@@ -589,21 +589,38 @@ function setupAudio() {
                 localGain.gain.value = properties.micDefaultVolume;
                 node.connect(localGain);
                 var detect = myProc(node);
+//                localGain.coonect(detect);
                 var manl = doScopeNode(myac, detect, "nearscope");
+//                localGain.connect(manl);
                 var dest = myac.createMediaStreamDestination();
-                manl.connect(dest);
                 localGain.connect(dest)
+                manl.connect(dest);
                 var lstream = dest.stream;
 
-                if (pc.addTrack) {
-                    stream.getTracks().forEach(track => {
-                        pc.addTrack(track, stream);
-                        console.log("added local track ", track.id, track.kind);
-                    });
+                if (isIOS) {
+                    if (pc.addTrack) {
+                        lstream.getTracks().forEach(track => {
+                            pc.addTrack(track, lstream);
+                            console.log("added local track ", track.id, track.kind);
+                        });
+                    } else {
+                        pc.addStream(lstream);
+                        console.log("added local stream");
+                    }
                 } else {
-                    pc.addStream(stream);
-                    console.log("added local stream");
+                    if (pc.addTrack) {
+                        stream.getTracks().forEach(track => {
+                            pc.addTrack(track, stream);
+                            console.log("added local track ", track.id, track.kind);
+                        });
+                    } else {
+                        pc.addStream(stream);
+                        console.log("added local stream");
+                    }
+
                 }
+
+
                 if (videoEnabled) {
                     var ourMediaElement = document.getElementById('in');
                     // Older browsers may not have srcObject
@@ -634,6 +651,10 @@ function setupAudio() {
     return promise;
 
 }
+
+function updateGain(value) {
+    localGain.gain.value = value;
+};
 
 function doPlay() {
     var ourMediaElement = document.getElementById('in');
