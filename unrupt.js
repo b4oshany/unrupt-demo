@@ -28,6 +28,7 @@ var initiator;
 var lcandyStash = [];
 var rcandyStash = [];
 var localStream;
+var localGain;
 var remoteStream;
 var scopes = [];
 var procs = [];
@@ -60,6 +61,16 @@ var is_speaking = {
     "nearscope": false,
     "earscope": false
 };
+
+var isMobileDevice = true;
+var isIOS = false;
+try {
+    isMobileDevice = !!navigator.userAgent.match(/Android|iPhone|iPad|iPod|BlackBerry|IEMobile/i);
+    isIOS = !!navigator.userAgent.match(/iPhone|iPad|iPod/i);
+} catch (err) {
+    console.log(err);
+}
+
 
 // message stuff - used to create direct connection to peer over WEBRTC
 
@@ -379,16 +390,26 @@ function setMute(m) {
     if (m) {
         mi.removeClass("fa-microphone");
         mi.addClass("fa-microphone-slash");
-        audioTracks[0].enabled = false;
+        if ( !isIOS ) {
+            audioTracks[0].enabled = false;
+        } else {
+            localGain.gain.value = properties.micUltraSilentVolume;
+        }
         document.getElementById("out").muted = false;
         document.getElementById("out").pause();
     } else {
         mi.removeClass("fa-microphone-slash");
         mi.addClass("fa-microphone");
-        audioTracks[0].enabled = true;
+        if ( !isIOS ) {
+            audioTracks[0].enabled = true;
+        } else {
+            localGain.gain.value = properties.micDefaultVolume;
+        }
         document.getElementById("out").muted = true;
         document.getElementById("out").play();
     }
+
+
 }
 
 // processing audio from the local microphone
@@ -453,7 +474,7 @@ function addStream(stream, kind) {
     if (kind.indexOf("video") != -1) {
         remoteStream = stream;
         var mediaElement = document.getElementById('out');
-        
+
         // Older browsers may not have srcObject
         if ("srcObject" in mediaElement) {
             mediaElement.srcObject = stream;
@@ -564,10 +585,14 @@ function setupAudio() {
             .then((stream) => {
                 localStream = stream; // in case we need it
                 var node = myac.createMediaStreamSource(stream);
+                localGain = myac.createGain();
+                localGain.gain.value = properties.micDefaultVolume;
+                node.connect(localGain);
                 var detect = myProc(node);
                 var manl = doScopeNode(myac, detect, "nearscope");
                 var dest = myac.createMediaStreamDestination();
                 manl.connect(dest);
+                localGain.connect(dest)
                 var lstream = dest.stream;
 
                 if (pc.addTrack) {
@@ -929,7 +954,7 @@ $(document).ready(_ => {
 
     // Manual unmute on the remote stream element
     $("#btnRemoteAudio").off('click').on('click', (e) => {
-	var otherUserMediaElement = document.getElementById('out');
+    var otherUserMediaElement = document.getElementById('out');
         if (otherUserMediaElement.muted) {
             otherUserMediaElement.muted = false;
             otherUserMediaElement.pause();

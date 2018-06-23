@@ -4,6 +4,7 @@ v1.1.0 (unreleased)
 ------------------------
 - Adjusted the mute function to pause and play the video when clicked.
   [b4oshany]
+- Added Gain control for the microphone.
 
 
 v0.1.0
@@ -16,7 +17,7 @@ v0.1.0
 
 v0.2.0
 --------------
-- Merged the audio and video versions together 
+- Merged the audio and video versions together
   [b4oshany]
 
 
