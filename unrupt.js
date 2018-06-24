@@ -24,6 +24,7 @@ var myac;
 var yourac;
 var yourBuffer;
 var myBuffer;
+var mysilentcount = 0;
 var initiator;
 var lcandyStash = [];
 var rcandyStash = [];
@@ -397,50 +398,50 @@ function myProc(node) {
     mb.click(() => {
         setMute(!mute);
     });
-    var buffer = myBuffer;
-    console.log("made unrupt buffer of size ", buffer.bufferSize);
-    var silentcount = 0;
-    buffer.onaudioprocess = ape => {
-        var inputBuffer = ape.inputBuffer;
+    // var buffer = myBuffer;
+    // console.log("made unrupt buffer of size ", buffer.bufferSize);
+    // var silentcount = 0;
+    // buffer.onaudioprocess = ape => {
+    //     var inputBuffer = ape.inputBuffer;
 
-        var outputBuffer = ape.outputBuffer;
+    //     var outputBuffer = ape.outputBuffer;
 
-        // Loop through the output channels (in this case there is only one)
-        if (inputBuffer.numberOfChannels == 1) {
-            var inputData = inputBuffer.getChannelData(0);
-            var outputData = outputBuffer.getChannelData(0);
-            // Loop through the 4096 samples
-            var avg = 0.0;
+    //     // Loop through the output channels (in this case there is only one)
+    //     if (inputBuffer.numberOfChannels == 1) {
+    //         var inputData = inputBuffer.getChannelData(0);
+    //         var outputData = outputBuffer.getChannelData(0);
+    //         // Loop through the 4096 samples
+    //         var avg = 0.0;
 
-            for (var sample = 0; sample < inputBuffer.length; sample++) {
-                // make output equal to the same as the input
-                outputData[sample] = inputData[sample];
-                avg += Math.abs(outputData[sample]); // sample
-            }
-            avg = avg / inputBuffer.length;
-            var silent = (avg < properties.micSilenceThreshold);
-            if (iamspeaking) {
-                if (silent) {
-                    silentcount++;
-                }
-                if (silentcount > properties.minFramesSilenceForPause) {
-                    iamspeaking = false;
-                    is_speaking["nearscope"] = false;
-                }else{
-                    is_speaking["nearscope"] = true;
-                }
-            } else {
-                is_speaking["nearscope"] = !silent;
-                if (!silent) {
-                    iamspeaking = true;
-                    silentcount = 0;
-                }
-            }
-        }
-    };
-    node.connect(buffer);
-    procs.push(buffer);
-    return buffer;
+    //         for (var sample = 0; sample < inputBuffer.length; sample++) {
+    //             // make output equal to the same as the input
+    //             outputData[sample] = inputData[sample];
+    //             avg += Math.abs(outputData[sample]); // sample
+    //         }
+    //         avg = avg / inputBuffer.length;
+    //         var silent = (avg < properties.micSilenceThreshold);
+    //         if (iamspeaking) {
+    //             if (silent) {
+    //                 silentcount++;
+    //             }
+    //             if (silentcount > properties.minFramesSilenceForPause) {
+    //                 iamspeaking = false;
+    //                 is_speaking["nearscope"] = false;
+    //             }else{
+    //                 is_speaking["nearscope"] = true;
+    //             }
+    //         } else {
+    //             is_speaking["nearscope"] = !silent;
+    //             if (!silent) {
+    //                 iamspeaking = true;
+    //                 silentcount = 0;
+    //             }
+    //         }
+    //     }
+    // };
+    // node.connect(buffer);
+    // procs.push(buffer);
+    // return buffer;
 }
 
 // called when webRTC presents us with a fresh remote audio stream
@@ -544,7 +545,7 @@ function setupAudio() {
     yourac = new AudioContext();
 
     yourBuffer = yourac.createScriptProcessor(properties.procFramesize, 1, 1);
-    myBuffer = myac.createScriptProcessor(properties.procFramesize, 1, 1);
+    // myBuffer = myac.createScriptProcessor(properties.procFramesize, 1, 1);
     let supportedConstraints = navigator.mediaDevices.getSupportedConstraints();
     console.log("Supported constraints");
     for (let constraint in supportedConstraints) {
@@ -564,8 +565,8 @@ function setupAudio() {
             .then((stream) => {
                 localStream = stream; // in case we need it
                 var node = myac.createMediaStreamSource(stream);
-                var detect = myProc(node);
-                var manl = doScopeNode(myac, detect, "nearscope");
+                myProc(node);
+                var manl = doScopeNode(myac, node, "nearscope");
                 var dest = myac.createMediaStreamDestination();
                 manl.connect(dest);
                 var lstream = dest.stream;
@@ -827,6 +828,17 @@ function makeDraw(canvName, anode) {
             }
             var mean = tot / bufferLength;
             var newspeak = (mean > 2.0);
+            console.info("my silent count : " + mysilentcount);
+            mysilentcount++;
+            if (mysilentcount > 100) {
+                iamspeaking = false;
+                is_speaking["nearscope"] = false;
+            }
+            if (canvName == "nearscope" && speaking) {
+                iamspeaking = true;
+                is_speaking["nearscope"] = true;
+                mysilentcount = 0;
+            }
             if (newspeak != speaking) {
                 speaking = newspeak;
                 //console.log("newspeak "+newspeak+" mean "+mean);
