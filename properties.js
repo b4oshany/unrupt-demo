@@ -9,7 +9,7 @@ var properties = {
     micSilenceThreshold : 0.0175, // minumum mean mic volume (in range of 0.0->1.0) of a frame that contains voice
                                   // used to trigger pause/unpause
                                   // default 0.0175 ok on imacs
-    micDefaultVolume: 2.5, // Gain control for the mic
+    micDefaultVolume: 1, // Gain control for the mic
     micUltraSilentVolume: 0.00000001, //
     farSilenceThreshold : 0.0175, // minimum mean remote volume (in range of 0.0->1.0) of a frame that contains voice
                                   // used to trim silence from playout

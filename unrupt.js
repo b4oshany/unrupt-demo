@@ -390,21 +390,21 @@ function setMute(m) {
     if (m) {
         mi.removeClass("fa-microphone");
         mi.addClass("fa-microphone-slash");
-        if ( !isIOS ) {
-            audioTracks[0].enabled = false;
-        } else {
-            localGain.gain.value = properties.micUltraSilentVolume;
-        }
+        // if ( !isIOS ) {
+        //     audioTracks[0].enabled = false;
+        // } else {
+            setGain(properties.micUltraSilentVolume);
+        // }
         document.getElementById("out").muted = false;
         document.getElementById("out").pause();
     } else {
         mi.removeClass("fa-microphone-slash");
         mi.addClass("fa-microphone");
-        if ( !isIOS ) {
-            audioTracks[0].enabled = true;
-        } else {
-            localGain.gain.value = properties.micDefaultVolume;
-        }
+        // if ( !isIOS ) {
+        //     audioTracks[0].enabled = true;
+        // } else {
+            setGain(properties.micDefaultVolume);
+        // }
         document.getElementById("out").muted = true;
         document.getElementById("out").play();
     }
@@ -558,6 +558,10 @@ function setupRTC() {
     };
 }
 
+function setGain(value){
+    localGain.gain.value = value;
+}
+
 // plumb the local audio together.
 function setupAudio() {
 
@@ -586,39 +590,26 @@ function setupAudio() {
                 localStream = stream; // in case we need it
                 var node = myac.createMediaStreamSource(stream);
                 localGain = myac.createGain();
-                localGain.gain.value = properties.micDefaultVolume;
-                node.connect(localGain);
                 var detect = myProc(node);
-//                localGain.coonect(detect);
                 var manl = doScopeNode(myac, detect, "nearscope");
-//                localGain.connect(manl);
                 var dest = myac.createMediaStreamDestination();
-                localGain.connect(dest)
                 manl.connect(dest);
+                node.connect(localGain);
+                localGain.connect(dest);
                 var lstream = dest.stream;
-
-                if (isIOS) {
-                    if (pc.addTrack) {
-                        lstream.getTracks().forEach(track => {
-                            pc.addTrack(track, lstream);
-                            console.log("added local track ", track.id, track.kind);
-                        });
-                    } else {
-                        pc.addStream(lstream);
-                        console.log("added local stream");
-                    }
-                } else {
-                    if (pc.addTrack) {
-                        stream.getTracks().forEach(track => {
-                            pc.addTrack(track, stream);
-                            console.log("added local track ", track.id, track.kind);
-                        });
-                    } else {
-                        pc.addStream(stream);
-                        console.log("added local stream");
-                    }
-
-                }
+                stream.addTrack(lstream.getAudioTracks()[0]);
+                stream.removeTrack(stream.getAudioTracks()[0]);
+                // localGain = GainController(stream);
+                
+                // if (pc.addTrack) {
+                //     stream.getTracks().forEach(track => {
+                //         pc.addTrack(track, stream);
+                //         console.log("added local track ", track.id, track.kind);
+                //     });
+                // } else {
+                    pc.addStream(stream);
+                    console.log("added local stream");
+                // }
 
 
                 if (videoEnabled) {
@@ -651,10 +642,6 @@ function setupAudio() {
     return promise;
 
 }
-
-function updateGain(value) {
-    localGain.gain.value = value;
-};
 
 function doPlay() {
     var ourMediaElement = document.getElementById('in');
