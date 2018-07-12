@@ -9,13 +9,17 @@ Unrupt aims to solves the issue of cross talking or interrupts to ensure that bo
 
 In the YouTube Video below, Tim Panton, the initial developer for Unrupt, explained and demonstrated how the system worked at Kamailio World Conference 2018. He demonstrated the ***pause-while-speaking*** feature and the audio waveforms that were displayed, which indicated when someone is speaking or playing from buffer. 
 
-<a target="_blank" href="https://www.youtube.com/embed/az_g2tOxhPI?start=782&amp;end=936&amp;autoplay=1" rel="nofollow"><img src="https://camo.githubusercontent.com/d6d7498df7c7318d9b975655632617b33cdafbef/68747470733a2f2f696d6167652e6962622e636f2f6248484474792f64656d6f2e706e67" alt="UNRUPT DEMO" data-canonical-src="https://image.ibb.co/bHHDty/demo.png" style="max-width:100%;"></a>
+<a target="_blank" href="https://www.youtube.com/embed/az_g2tOxhPI?start=782&amp;end=936&amp;autoplay=1" rel="nofollow"><img data-canonical-src="https://www.youtube.com/embed/az_g2tOxhPI?start=782&amp;end=936&amp;autoplay=1" src="https://camo.githubusercontent.com/d6d7498df7c7318d9b975655632617b33cdafbef/68747470733a2f2f696d6167652e6962622e636f2f6248484474792f64656d6f2e706e67" alt="UNRUPT DEMO" data-canonical-src="https://image.ibb.co/bHHDty/demo.png" style="max-width:100%;"></a>
 
 The buffer shows a blue band for duration of speech by the near speaker and an orange band for duration of unheard speech by the far speaker, which is buffered during the near speech and played out when the near speaker stops speaking. The manual pause button also sets Mute on and off. The video feed is optional and continues live while the audio is buffered.
 
 ### Demos
 
 You can go to our [stable version](https://unrupt.github.io/unrupt) or [experimental version](https://b4oshany.github.io/unrupt-demo) page to try it for yourself.
+
+### Useful Links
+
+* [Unrupt and WebRTC Real Time Communication without Plugins](https://docs.google.com/presentation/d/e/2PACX-1vQFTN14JutDuXvi-DUKWtp7gMfRggnoAwvycis8Ly450JKKwOOIV3ggPjPhWxZDgM6-08ohvZutpwus/pub?start=false&loop=false&delayms=3000) by Oshane Bailey
 
 ## **Licences**
 
@@ -25,8 +29,5 @@ For information on the non-commercial MIT open source licence of the demo softwa
 
 Visit our [Roadmap 2018](https://docs.google.com/document/d/1Xf5LLFaNVRIa-bGX67v_XsYMWW4lbfdKqtzS3_iYNF4/edit#). For context, take a look at [this document with comments on Tim's signalling proposal](https://docs.google.com/document/d/1GMY7wygeD0dyH3lxl3YjRJM2G2v9ZGiBeg7x-AOCuiM/edit?usp=sharing)
 
-</div>
-
-</div>
 
 © 2018 GitHub, Inc. Terms Privacy Security Status Help Contact GitHub API Training Shop Blog About Press h to open a hovercard with more details.
