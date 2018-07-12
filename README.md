@@ -17,9 +17,9 @@ The buffer shows a blue band for duration of speech by the near speaker and an o
 
 You can go to our [stable version](https://unrupt.github.io/unrupt) or [experimental version](https://b4oshany.github.io/unrupt-demo) page to try it for yourself.
 
-### Presentation
+### Useful Links
 
-<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQFTN14JutDuXvi-DUKWtp7gMfRggnoAwvycis8Ly450JKKwOOIV3ggPjPhWxZDgM6-08ohvZutpwus/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+* [Unrupt and WebRTC Real Time Communication without Plugins](https://docs.google.com/presentation/d/e/2PACX-1vQFTN14JutDuXvi-DUKWtp7gMfRggnoAwvycis8Ly450JKKwOOIV3ggPjPhWxZDgM6-08ohvZutpwus/pub?start=false&loop=false&delayms=3000) by Oshane Bailey
 
 ## **Licences**
 
