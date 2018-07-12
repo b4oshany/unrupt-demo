@@ -1,17 +1,21 @@
 ![](https://github.com/Unrupt/unrupt.github.io/blob/master/images/unrupt%20logo.PNG?raw=true)
 # So no-one's ideas are lost.
 
-Unrupt Demo 1.0 shows automatically pausing or playing back a live VOIP call by means of buffering in the browser triggered by a participant simply starting and stopping speaking**.  
+Unrupt aims to solves the issue of cross talking or interrupts to ensure that both sides do not lose their chain of thoughts. There’s a ***pause-while-speaking*** feature in Unrupt that will automatically pause and buffer what the other user is saying while you are talking, when you are finish talking, it will plays out what the other person said. In addition, there's a manual pause feature, which mutes you, buffer the other users and plays it out when you click unpause. The screen shot below illustrates the feature of the unrupt system.
 
-‍**This avoids interruption or disruption from people speaking over each other or backing down, instead each person can speak their thoughts as they arise, and they are played out one after the other, so no-one's ideas are lost.
+<img src="https://image.ibb.co/mYquwo/Unrupt_Annotation.png" alt="Unrupt_Annotation" border="0">
 
-[![UNRUPT DEMO](https://image.ibb.co/bHHDty/demo.png)](https://www.youtube.com/embed/az_g2tOxhPI?start=782&end=936&autoplay=1)
+‍**This avoids interruption or disruption from people speaking over each other or backing down, instead each person can speak their thoughts as they arise, and they are played out one after the other, so no-one's ideas are lost.**
 
-In this showing of our unrupt demo by Tim Panton at Kamailioworld far audio is buffered while Pause-while-speaking is on and when manually paused. Audio waveforms are displayed to indicate when speaking live or playing from buffer. 
+In the YouTube Video below, Tim Panton, the initial developer for Unrupt, explained and demonstrated how the system worked at Kamailio World Conference 2018. He demonstrated the ***pause-while-speaking*** feature and the audio waveforms that were displayed, which indicated when someone is speaking or playing from buffer. 
+
+<a target="_blank" href="https://www.youtube.com/embed/az_g2tOxhPI?start=782&amp;end=936&amp;autoplay=1" rel="nofollow"><img src="https://camo.githubusercontent.com/d6d7498df7c7318d9b975655632617b33cdafbef/68747470733a2f2f696d6167652e6962622e636f2f6248484474792f64656d6f2e706e67" alt="UNRUPT DEMO" data-canonical-src="https://image.ibb.co/bHHDty/demo.png" style="max-width:100%;"></a>
 
 The buffer shows a blue band for duration of speech by the near speaker and an orange band for duration of unheard speech by the far speaker, which is buffered during the near speech and played out when the near speaker stops speaking. The manual pause button also sets Mute on and off. The video feed is optional and continues live while the audio is buffered.
 
-Go to our [experimental version](https://b4oshany.github.io/unrupt-demo) page to try for yourself.
+### Demos
+
+You can go to our [stable version](https://unrupt.github.io/unrupt) or [experimental version](https://b4oshany.github.io/unrupt-demo) page to try it for yourself.
 
 ## **Licences**
 
@@ -26,7 +30,3 @@ Visit our [Roadmap 2018](https://docs.google.com/document/d/1Xf5LLFaNVRIa-bGX67v
 </div>
 
 © 2018 GitHub, Inc. Terms Privacy Security Status Help Contact GitHub API Training Shop Blog About Press h to open a hovercard with more details.
-
-
-
-
