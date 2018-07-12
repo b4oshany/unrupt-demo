@@ -17,6 +17,10 @@ The buffer shows a blue band for duration of speech by the near speaker and an o
 
 You can go to our [stable version](https://unrupt.github.io/unrupt) or [experimental version](https://b4oshany.github.io/unrupt-demo) page to try it for yourself.
 
+### Presentation
+
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQFTN14JutDuXvi-DUKWtp7gMfRggnoAwvycis8Ly450JKKwOOIV3ggPjPhWxZDgM6-08ohvZutpwus/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
 ## **Licences**
 
 For information on the non-commercial MIT open source licence of the demo software visit [our gitthub licence page](https://github.com/steely-glint/unrupt-demo/blob/master/LICENSE). If you're interested in commercial licensing for white label adoption into your own products visit [the commercial patent license page](https://docs.google.com/document/d/1Vllclet_HAtP1CSrq9xUfyZ9OAf53xEurgfGcryjurc/edit?usp=sharing) feel free to speak to us about consulting and implementation help.The original [source code](https://github.com/steely-glint/unrupt-demo) is at [https://github.com/steely-glint/unrupt-demo](https://github.com/steely-glint/unrupt-demo)[](https://docs.google.com/document/d/1GMY7wygeD0dyH3lxl3YjRJM2G2v9ZGiBeg7x-AOCuiM/edit?usp=sharing)
