@@ -32,3 +32,13 @@ Visit our [Roadmap 2018](https://docs.google.com/document/d/1Xf5LLFaNVRIa-bGX67v
 
 
 © 2018 GitHub, Inc. Terms Privacy Security Status Help Contact GitHub API Training Shop Blog About Press h to open a hovercard with more details.
+
+
+## Browsers support
+
+| <a href="https://imgbb.com/"><img src="https://thumb.ibb.co/dGJd98/unrupt_logo_min.png" alt="unrupt_logo_min" border="0"></a>  Features | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>IE / Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Safari |
+| -------------------- | --------- | --------- | --------- | --------- |
+| Video Call | IE11, Edge| last 2 versions| last version| last 2 versions
+| Voice Call | IE11, Edge| last 2 versions| last version| last 2 versions
+| Pause-While-Speaking | IE11, Edge| last 2 versions| last version| last 2 versions
+| Manual Pause/Play | IE11, Edge| last 2 versions| last version| last 2 versions
