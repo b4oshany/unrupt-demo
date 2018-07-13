@@ -18,6 +18,114 @@ The buffer shows a blue band for duration of speech by the near speaker and an o
 
 You can go to our [stable version](https://unrupt.github.io/unrupt) or [experimental version](https://b4oshany.github.io/unrupt-demo) page to try it for yourself.
 
+![](https://github.com/Unrupt/unrupt.github.io/blob/master/images/unrupt%20logo.PNG?raw=true)
+
+## Known Issues with Unrupt and WebRTC
+
+- User has to grant permissions for their webcam and microphone. This user gesture is required by major browsers, which might interrupt the process of the application. 
+- On iPhone 7 and above, the buffering becomes unstable after clicking on mute then unmute two times (Unrupt only)
+
+
+## Browsers support
+
+<table class="rich-diff-level-zero">
+    <thead class="rich-diff-level-one">
+        <tr>
+            <th></th>
+            <th colspan="4">Desktop</th>
+            <th colspan="3">Mobile</th>
+        </tr>
+        <tr>
+            <th>
+                <img src="https://camo.githubusercontent.com/bdaab155ed964b17a6b6050947a47f4fec73c1c4/68747470733a2f2f7468756d622e6962622e636f2f64474a6439382f756e727570745f6c6f676f5f6d696e2e706e67" alt="unrupt_logo_min" border="0" data-canonical-src="https://thumb.ibb.co/dGJd98/unrupt_logo_min.png" style="max-width:100%;">
+            </th>
+            <th>
+                <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" style="max-width:100%;">
+            </th>
+            <th>
+                <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" style="max-width:100%;">
+            </th>
+            <th>
+                <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" style="max-width:100%;">
+            </th>
+            <th>
+                <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" style="max-width:100%;">
+            </th>
+            <th>
+                <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox Mobile" width="24px" height="24px" style="max-width:100%;">
+            </th>
+            <th>
+                <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome Mobile" width="24px" height="24px" style="max-width:100%;">
+            </th>
+            <th>
+                <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari Mobile" width="24px" height="24px" style="max-width:100%;">
+            </th>
+        </tr>
+    </thead>
+    <tbody class="rich-diff-level-one">
+        <tr>
+            <td>Basic Support</td>
+            <td align="center" alt="ie" >IE11, Edge</td>
+            <td align="center" alt="Firefox" >60+</td>
+            <td align="center" alt="Chrome" >49+</td>
+            <td align="center" alt="Safari" >11.1+</td>
+            <td align="center" alt="Firefox Mobile" >44</td>
+            <td align="center" alt="Chrome Mobile" >56</td>
+            <td align="center" alt="Safari Mobile" >11.3</td>
+        </tr>
+        <tr>
+            <td>Video Call</td>
+            <td align="center" alt="ie" >IE11, Edge</td>
+            <td align="center" alt="Firefox" >60+</td>
+            <td align="center" alt="Chrome" >49+</td>
+            <td align="center" alt="Safari" >11.1+</td>
+            <td align="center" alt="Firefox Mobile" >44+</td>
+            <td align="center" alt="Chrome Mobile" >56+</td>
+            <td align="center" alt="Safari Mobile" >11.3</td>
+        </tr>
+        <tr>
+            <td>Voice Call</td>
+            <td align="center" alt="ie" >IE11, Edge</td>
+            <td align="center" alt="Firefox" >60+</td>
+            <td align="center" alt="Chrome" >49+</td>
+            <td align="center" alt="Safari" >11.1+</td>
+            <td align="center" alt="Firefox Mobile" >44+</td>
+            <td align="center" alt="Chrome Mobile" >56+</td>
+            <td align="center" alt="Safari Mobile" >11.3</td>
+        </tr>
+        <tr>
+            <td>Pause-While-Speaking</td>
+            <td align="center" alt="ie" >IE11, Edge</td>
+            <td align="center" alt="Firefox" >60+</td>
+            <td align="center" alt="Chrome" >49+</td>
+            <td align="center" alt="Safari" >11.1+</td>
+            <td align="center" alt="Firefox Mobile" >44+</td>
+            <td align="center" alt="Chrome Mobile" >56+</td>
+            <td align="center" alt="Safari Mobile" >11.3</td>
+        </tr>
+        <tr>
+            <td>Manual Pause/Play</td>
+            <td align="center" alt="ie" >IE11, Edge</td>
+            <td align="center" alt="Firefox" >60+</td>
+            <td align="center" alt="Chrome" >49+</td>
+            <td align="center" alt="Safari" >11.1+</td>
+            <td align="center" alt="Firefox Mobile" >44+</td>
+            <td align="center" alt="Chrome Mobile" >56+</td>
+            <td align="center" alt="Safari Mobile" >?</td>
+        </tr>
+        <tr>
+            <td>Mute while <br/>Pause-While-Speak<br> is on</td>
+            <td align="center" alt="ie" >IE11, Edge</td>
+            <td align="center" alt="Firefox" >60+</td>
+            <td align="center" alt="Chrome" >49+</td>
+            <td align="center" alt="Safari" >?</td>
+            <td align="center" alt="Firefox Mobile" >44+</td>
+            <td align="center" alt="Chrome Mobile" >56+</td>
+            <td align="center" alt="Safari Mobile" >X</td>
+        </tr>
+    </tbody>
+</table>
+
 ### Useful Links
 
 * [Unrupt and WebRTC Real Time Communication without Plugins](https://docs.google.com/presentation/d/e/2PACX-1vQFTN14JutDuXvi-DUKWtp7gMfRggnoAwvycis8Ly450JKKwOOIV3ggPjPhWxZDgM6-08ohvZutpwus/pub?start=false&loop=false&delayms=3000) by Oshane Bailey
@@ -32,13 +140,3 @@ Visit our [Roadmap 2018](https://docs.google.com/document/d/1Xf5LLFaNVRIa-bGX67v
 
 
 © 2018 GitHub, Inc. Terms Privacy Security Status Help Contact GitHub API Training Shop Blog About Press h to open a hovercard with more details.
-
-
-## Browsers support
-
-| <a href="https://imgbb.com/"><img src="https://thumb.ibb.co/dGJd98/unrupt_logo_min.png" alt="unrupt_logo_min" border="0"></a>  Features | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>IE / Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Safari |
-| -------------------- | --------- | --------- | --------- | --------- |
-| Video Call | IE11, Edge| last 2 versions| last version| last 2 versions
-| Voice Call | IE11, Edge| last 2 versions| last version| last 2 versions
-| Pause-While-Speaking | IE11, Edge| last 2 versions| last version| last 2 versions
-| Manual Pause/Play | IE11, Edge| last 2 versions| last version| last 2 versions
