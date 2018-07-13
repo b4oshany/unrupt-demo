@@ -18,15 +18,14 @@ The buffer shows a blue band for duration of speech by the near speaker and an o
 
 You can go to our [stable version](https://unrupt.github.io/unrupt) or [experimental version](https://b4oshany.github.io/unrupt-demo) page to try it for yourself.
 
-![](https://github.com/Unrupt/unrupt.github.io/blob/master/images/unrupt%20logo.PNG?raw=true)
 
-## Known Issues with Unrupt and WebRTC
+### Known Issues with Unrupt and WebRTC
 
 - User has to grant permissions for their webcam and microphone. This user gesture is required by major browsers, which might interrupt the process of the application. 
 - On iPhone 7 and above, the buffering becomes unstable after clicking on mute then unmute two times (Unrupt only)
 
 
-## Browsers support
+### Browsers support
 
 <table class="rich-diff-level-zero">
     <thead class="rich-diff-level-one">
