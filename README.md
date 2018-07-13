@@ -1,7 +1,8 @@
 ![](https://github.com/Unrupt/unrupt.github.io/blob/master/images/unrupt%20logo.PNG?raw=true)
 # So no-one's ideas are lost.
 
-Unrupt aims to solve the issue of cross talking or interrupts to ensure that both sides do not lose their chain of thoughts. There’s a ***pause-while-speaking*** feature in Unrupt that will automatically pause and buffer what the other user is saying while you are talking, when you are finish talking, it will plays out what the other person said. In addition, there's a manual pause feature, which mutes you, buffer the other users and plays it out when you click unpause. The screen shot below illustrates the feature of the unrupt system.
+Unrupt solves the issue of cross talking or interruptions to ensure that both sides do not lose their chain of thoughts. The ***pause-while-speaking*** feature in Unrupt automatically pauses and buffers what the other user is saying while you are talking. 
+When you finish talking, it plays out what the other person said. In addition, there's a manual pause feature, which mutes you, buffers the other user's speech and plays it out when you click unpause. The screenshot below illustrates the features of the unrupt webapp.
 
 <img src="https://image.ibb.co/mYquwo/Unrupt_Annotation.png" alt="Unrupt_Annotation" border="0">
 
