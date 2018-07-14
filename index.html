@@ -10,7 +10,7 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous" />
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
-        <link rel="stylesheet" href="unrupt.css?v=1.1.4" type="text/css" />
+        <link rel="stylesheet" href="unrupt.css?v=1.1.5" type="text/css" />
     </head>
 
     <body>
@@ -142,7 +142,30 @@
                 </div>
             </div>
         </div>
-        <!--  End Modals      -->
+        
+        <div id="confirmBox" class="modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <!--<div class="modal-header">-->
+                    <!--    <h5 class="modal-title">Accept a call</h5>-->
+                    <!--</div>-->
+                    <div class="modal-body">
+                        <div class="message"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="cfb-yes btn btn-secondary" data-dismiss="modal">
+                            Start a New Call
+                        </button>
+                        <button type="button" class="cfb-no btn btn-secondary" data-dismiss="modal">
+                            End Call
+                        </button>
+                        <button type="button" class="cfb-cancel btn btn-secondary" data-dismiss="modal">
+                            Cancel
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <input type="hidden" id="unrupturl" />
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" crossorigin="anonymous"></script>

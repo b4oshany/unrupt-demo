@@ -177,9 +177,33 @@ function startCall(cid) {
         .catch(e => console.log("offer not created due to ", e));
 }
 
+function doConfirm(msg, yesFn, noFn, cancelFn)
+{
+    var confirmBox = $("#confirmBox");
+    confirmBox.find(".message").text(msg);
+    confirmBox.find(".cfb-yes,.cfb-no,.cfb-cancel").unbind().click(function()
+    {
+        confirmBox.modal('hide');
+    });
+    confirmBox.find(".cfb-yes").click(yesFn);
+    confirmBox.find(".cfb-no").click(noFn);
+    confirmBox.find(".cfb-cancel").click(cancelFn);
+    confirmBox.modal('show');
+}
+
 function stopCall() {
     localStorage.setItem("call_has_ended", true);
-    window.location.href = window.location.href;
+    doConfirm(
+        "Do you want to start a new call or end the current one?",
+        function startNewCall(){
+            window.location.href = ".";
+        },
+        function endCall(){
+            window.close();
+        }, function cancelFn(){
+            console.log("Keep call alive");
+        }
+    );
 }
 
 function videoCapture() {
